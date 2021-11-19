@@ -15,5 +15,8 @@ module.exports = function () {
   // update a record by ID
   router.put('/patients/:id', patientController.updatePatient);
 
+  // delate a patient by ID
+  router.delete('/patients/:id', patientController.deletePatient);
+
   return router;
 };

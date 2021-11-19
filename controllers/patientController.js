@@ -54,3 +54,14 @@ exports.updatePatient = async (req, res, next) => {
     next();
   }
 };
+
+// delete a record by (ID)
+exports.deletePatient = async (req, res, next) => {
+  try {
+    await Patient.findOneAndDelete(req.params.id);
+    res.json({ message: 'Deleted patient!' });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};

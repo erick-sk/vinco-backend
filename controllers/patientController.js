@@ -26,3 +26,14 @@ exports.getPatients = async (req, res, next) => {
     next();
   }
 };
+
+// get a single patient (ID)
+exports.getPatient = async (req, res, next) => {
+  try {
+    const patient = await Patient.findById(req.params.id);
+    res.json(patient);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};

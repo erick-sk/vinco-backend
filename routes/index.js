@@ -6,5 +6,8 @@ module.exports = function () {
   // add new patients via POST
   router.post('/patients', patientController.newCustomer);
 
+  // get all records of patients from database
+  router.get('/patients', patientController.getPatients);
+
   return router;
 };

@@ -15,3 +15,14 @@ exports.newCustomer = async (req, res, next) => {
     next();
   }
 };
+
+// get all patients
+exports.getPatients = async (req, res, next) => {
+  try {
+    const patients = await Patient.find({});
+    res.json(patients);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};

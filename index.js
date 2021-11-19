@@ -1,6 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 dotenv.config();
 
 // create server
@@ -10,7 +10,7 @@ const app = express();
 const database = process.env.MONGODB_URI;
 mongoose
   .connect(database, { useUnifiedTopology: true, useNewUrlParser: true })
-  .then(() => console.log("MongoDB connected!"))
+  .then(() => console.log('MongoDB connected!'))
   .catch((error) => console.log(error));
 
 // port

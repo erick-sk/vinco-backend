@@ -3,9 +3,25 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 const routes = require('./routes');
+const cors = require('cors');
 
 // create server
 const app = express();
+
+// enable cors
+const whitelist = [process.env.WHITELIST];
+const corsOptions = {
+  origin: (origin, callback) => {
+    const exist = whitelist.some((domain) => domain === origin);
+    if (exist) {
+      callback(null, true);
+    } else {
+      callback(new Error('No allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 // MongoDB connection
 const database = process.env.MONGODB_URI;

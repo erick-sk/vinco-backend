@@ -37,3 +37,20 @@ exports.getPatient = async (req, res, next) => {
     next();
   }
 };
+
+// update a record by (ID)
+exports.updatePatient = async (req, res, next) => {
+  try {
+    const patient = await Patient.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.json(patient);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};

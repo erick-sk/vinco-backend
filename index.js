@@ -14,6 +14,9 @@ mongoose
   .then(() => console.log('MongoDB connected!'))
   .catch((error) => console.log(error));
 
+// body parser
+app.use(express.urlencoded({ extended: false }));
+
 // enable routes
 app.use('/', routes());
 

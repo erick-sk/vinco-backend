@@ -4,7 +4,8 @@
   "description": "Backend build with MongoDB and Express",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./index.js",
+    "start": "node index.js"
   },
   "author": "Erick Saavedra",
   "license": "ISC",

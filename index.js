@@ -21,7 +21,7 @@ const corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // MongoDB connection
 const database = process.env.MONGODB_URI;

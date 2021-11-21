@@ -33,6 +33,9 @@ mongoose
 // body parser
 app.use(express.urlencoded({ extended: false }));
 
+// req.body parser json
+app.use(express.json());
+
 // enable routes
 app.use('/', routes());
 
